@@ -1,0 +1,168 @@
+:root {
+  --main-bg-color: rgb(222, 245, 248);
+  --hover-bg-color: rgb(222, 245, 248);
+  --square-bg-color: #bac7cc;
+  --clear-btn-bg-color: #30f4ca;
+  --clear-btn-hover-color: #f46127;
+  --status-color: rgb(141, 247, 247);
+  --status-winner-color: rgb(247, 247, 26);
+  --text-shadow: rgba(255, 255, 255, 0.8);
+  --counter-bg-color: rgb(222, 245, 248);
+  --counter-text-color: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.imagen {
+  background-image: url("../public/imagen.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.status {
+  margin: 20px 0;
+  font-size: 50px;
+  color: var(--status-color);
+  text-shadow: 0 0 10px var(--text-shadow);
+}
+
+.status-winner {
+  color: var(--status-winner-color);
+  text-shadow: 0 0 20px var(--text-shadow);
+}
+
+.board {
+  margin-top: 30px;
+  width: 50vw;
+  padding: 20px;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.board-row .square {
+  margin: 3px;
+  background-color: var(--square-bg-color);
+  border-radius: 5px;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  font-size: 70px;
+}
+
+.board-row .square:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.clear-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: var(--clear-btn-bg-color);
+  color: rgb(28, 26, 26);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: var(--clear-btn-hover-color);
+}
+
+.counters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.counter {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--counter-bg-color);
+  border-radius: 5px;
+  width: 200px;
+  margin-top: 30px;
+}
+
+.counter p {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--counter-text-color);
+}
+
+/* Para dispositivos tabletas */
+@media (max-width: 768px) {
+  .board-row .square {
+    width: 60px;
+    height: 60px;
+    font-size: 50px;
+  }
+
+  .status {
+    font-size: 30px;
+  }
+
+  .counter p {
+    font-size: 18px;
+  }
+}
+
+/* Para dispositivos teléfonos */
+@media (max-width: 480px) {
+  .imagen {
+    background-size: cover;
+  }
+
+  .board {
+    width: 90vw;
+    padding: 10px;
+  }
+
+  .board-row .square {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+  }
+
+  .status {
+    font-size: 24px;
+  }
+
+  .clear-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .counters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .counter {
+    width: 80vw;
+  }
+
+  .counter p {
+    font-size: 16px;
+  }
+}
